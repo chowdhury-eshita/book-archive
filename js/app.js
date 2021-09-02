@@ -1,6 +1,5 @@
 //load results
 const searchBook = () => {
-    // toggleSpinner('block');
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     const url = `http://openlibrary.org/search.json?q=${searchText}`;
@@ -21,7 +20,7 @@ const displayBook = (data) => {
     // console.log(books);
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
-    books.forEach(book => {
+    books?.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -35,44 +34,32 @@ const displayBook = (data) => {
 
                 `;
         searchResult.appendChild(div);
-        // toggleSpinner('none');
     });
 }
 
 //total result found
 const resultCountDisplay = (count) => {
-    if (!count) {
-        validSearch();
+    const resultCount = document.getElementById('result-count');
+    if (!count.num_found) {
+        resultCount.innerHTML = `
+    <h5 class="text-secondary">${count.num_found} Result Found!</h5>
+    `;
+
     }
     else {
-        const resultCount = document.getElementById('result-count');
         resultCount.innerHTML = `
-        <h4 class="text-success">${count.num_found} Results found</h4>
+        <h4 class="text-success fw-bold">${count.num_found} Results found</h4>
         `;
     }
 }
-// //toggle sppiner
-// const toggleSpinner = displayStyle => {
-//     document.getElementById('spinner').style.display = displayStyle;
-// }
+
 const toggleResultCount = displayStyle => {
     document.getElementById('result-count').style.display = displayStyle;
 }
 //empty searchbox
 const emptySearchBox = () => {
-    const errorMessage = document.getElementById('error-message');
-    errorMessage.textContent = '';
+    const errorMessage = document.getElementById('result-count');
     errorMessage.innerHTML = `
-    <h5>Please Enter Your Book Name!</h5>
+    <h5 class="text-danger">Please Enter Your Book Name!</h5>
     `;
-
-}
-//valid search
-const validSearch = () => {
-    const errorMessage = document.getElementById('error-message');
-    errorMessage.textContent = '';
-    errorMessage.innerHTML = `
-    <h5>No Result Found!</h5>
-    `;
-
 }

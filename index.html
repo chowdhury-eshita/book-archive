@@ -13,23 +13,13 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
-<body class="container">
+<body class="container bg-light">
     <!-- search field  -->
-    <h1 class="text-center text-primary my-3 fw-bold">Search Your Book</h1>
+    <h1 class="text-center text-success my-3 fw-bold">Search Your Book</h1>
     <div class="input-group mb-3 w-50 mx-auto">
         <input id="search-field" type="text" class="form-control" placeholder="Search Book" aria-label="Search Book"
             aria-describedby="button-addon2">
         <button onclick="searchBook()" class="btn btn-outline-danger" type="button" id="button-search">Search</button>
-    </div>
-    <!-- error message -->
-    <div id="error-message" class="text-secondary text-center"></div>
-    <!-- spinner -->
-    <div id="spinner">
-        <div class="text-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
     </div>
     <!-- result count  -->
     <div id="result-count" class="text-center my-3">
