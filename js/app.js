@@ -1,5 +1,6 @@
 //load results
 const searchBook = () => {
+    document.getElementById('found-result').textContent = '';
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
