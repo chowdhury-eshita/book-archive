@@ -32,7 +32,7 @@ const displayBook = (data) => {
                             <h5 class="card-title">${book.title}</h5>
                         <p class="card-text">Author: ${book.author_name ? book.author_name : 'Not Available'}</p>
                         <p class="card-text">Publisher: ${book.publisher[0] ? book.publisher[0] : 'Not Available'}</p>
-                        <p class="card-text">First Publish: ${book.first_publish_year}</p>
+                        <p class="card-text">First Publish: ${book.first_publish_year ? book.first_publish_year : 'Not Available'}</p>
                     </div>
                </div>
                 `;
