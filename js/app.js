@@ -2,7 +2,7 @@
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
     if (searchText === '') {
         emptySearchBox();
     }
